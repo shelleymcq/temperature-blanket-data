@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>temperature data</title>
 </head>
 <body>
@@ -32,36 +32,38 @@
       </div>
 
       <div class="container-fluid">
-        <div>search inputs here</div>
+        <div>
+          <form autocomplete="off" action="/action_page.php">
+            <div class="autocomplete" style="width:300px;">
+              <input id="myInput" type="text" name="myCity" placeholder="City Name">
+            </div>
+            <input type="submit">
+          </form>
+        </div>
 
             <table class="table w-50">
             <thead>
             <tr>
-                <th scope="col">Day</th>
-                <th scope="col">High</th>
-                <th scope="col">Low</th>
+                <th scope="col">Date</th>
+                <th scope="col">High Temperature (F)</th>
+
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
+                <th scope="row">01/01/2020</th>
+                <td>43</td>
             </tr>
             <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
+                <th scope="row">01/02/2020</th>
+                <td>50</td>
             </tr>
             <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
+                <th scope="row">01/03/2020</th>
+                <td>48</td>
             </tr>
             </tbody>
         </table>
-
-        <div>download options here</div>
 
     </div>
 
@@ -70,6 +72,6 @@
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
