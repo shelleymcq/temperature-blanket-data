@@ -1,6 +1,6 @@
 // inputs: zipcode/city, year, farenheit/celcius choice
 
-
+// city search autofills to match NOAA format
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -98,6 +98,7 @@ function autocomplete(inp, arr) {
   });
   }
 
+// array of city and states in NOAA format
 const cities = [
     "Washington D.C., US",
     "Alexander City, AL US",
@@ -951,12 +952,14 @@ autocomplete(document.getElementById("myInput"), cities);
 
 
 // fetch weather data
-const noaaUrl =
-  "https://www.ncdc.noaa.gov/cdo-web/api/v2/locations?datasetid=GSOM&locationcategoryid=CITY&offset=1049&limit=20";
+const noaaStationIDUrl =
+  "https://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=TMAX&locationid=CITY:US560007&startdate=2020-01-01&enddate=2020-12-31&limit=1";
+
 const noaaToken = "oTpqrhNkWQBIbOWgrvJrCUeJdRKIhbac";
 
+// fetch station id
 $.ajax({
-  url: noaaUrl,
+  url: noaaStationIDUrl,
   headers: { token: noaaToken },
 })
   .then(function (response) {
@@ -964,12 +967,24 @@ $.ajax({
     return response.results;
   })
   .then(function (data) {
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].name === "Washington D.C., US") {
-        console.log(data[i].id);
-      }
-    }
+    console.log(data[0].station);
+    return data[0].station;
+  })
+  .then(function (station) {
+    $.ajax({
+      url: "https://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datacategoryid=TEMP&datatypeid=TMAX&stationid=" + station + "&startdate=2020-01-01&enddate=2020-12-31&limit=1000&units=metric",
+      headers: { token: noaaToken },
+    })
+    .then(function (response) {
+      console.log(response.results);
+      return response.results;
+    })
+    .then(function(tempData) {
+      console.log(tempData[0].value);
+    })
   });
+
+
 
 // render to table
 
