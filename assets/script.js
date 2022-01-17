@@ -957,7 +957,10 @@ const noaaStationIDUrl =
 
 const noaaToken = "oTpqrhNkWQBIbOWgrvJrCUeJdRKIhbac";
 
-// fetch station id
+// function to take in city name (user input) and get city id
+
+
+// fetch station id (city id currently hard-coded)
 $.ajax({
   url: noaaStationIDUrl,
   headers: { token: noaaToken },
@@ -980,12 +983,21 @@ $.ajax({
       return response.results;
     })
     .then(function(tempData) {
-      console.log(tempData[0].value);
+      let yearDates = [];
+      let yearTemps = [];
+
+      for(let i = 0; i < tempData.length; i++) {
+        yearDates.push(tempData[i].date);
+        yearTemps.push(tempData[i].value);
+      };
+      return yearDates, yearTemps;
     })
   });
 
-
+// convert Celcius to Fahrenheit
 
 // render to table
 
-// convert table to something printable ????
+// convert table to something printable
+
+// color planning and preview
