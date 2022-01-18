@@ -33,11 +33,14 @@
 
       <div class="container-fluid">
         <div>
-          <form autocomplete="off" action="/action_page.php">
+          <form autocomplete="off" action="/action_page.php" id="get-data">
             <div class="autocomplete" style="width:300px;">
               <input id="myInput" type="text" name="myCity" placeholder="City Name">
             </div>
-            <input type="submit">
+            <div style="width:100px;">
+              <input id="year" type="text" name="myYear" placeholder="Year">
+            </div>
+              <input type="submit">
           </form>
           <div>Note: There may not be data for every US city. If your city or town does not appear in the list, try a larger city close to you.</div>
         </div>

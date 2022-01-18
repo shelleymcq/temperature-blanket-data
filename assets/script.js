@@ -949,7 +949,16 @@ const cities = [
 
 autocomplete(document.getElementById("myInput"), cities);
 
+const form = document.getElementById('get-data');
+const city = document.getElementById('myInput');
+const year = document.getElementById('year');
 
+// submit city and year request
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  console.log(city.value, +year.value);
+});
 
 // fetch weather data
 const noaaStationIDUrl =
@@ -990,6 +999,7 @@ $.ajax({
         yearDates.push(tempData[i].date);
         yearTemps.push(tempData[i].value);
       };
+      console.log(yearDates, yearTemps);
       return yearDates, yearTemps;
     })
   });
