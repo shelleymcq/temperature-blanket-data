@@ -2,6 +2,11 @@ body {
     padding-top: 40px;
 }
 
+#table-note {
+  color: blue;
+  padding: 20px;
+}
+
 .autocomplete {
     /*the container must be positioned relative:*/
     position: relative;
