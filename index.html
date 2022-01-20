@@ -10,55 +10,57 @@
 </head>
 <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Temperature Blanket Data</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Palette Generator</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Temperature Blanket Data</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Palette Generator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
       </div>
+    </nav>
 
-      <div class="container-fluid">
-        <div>
-          <form autocomplete="off" action="/action_page.php" id="get-data">
-            <div class="autocomplete" style="width:300px;">
-              <input id="myInput" type="text" name="myCity" placeholder="City Name">
-            </div>
-            <div style="width:100px;">
-              <input id="year" type="text" name="myYear" placeholder="Year">
-            </div>
-              <input type="submit">
-          </form>
-          <div>Note: There may not be data for every US city. If your city or town does not appear in the list, try a larger city close to you.</div>
-        </div>
+    <img src="./assets/images/temperature.jpg" alt="knit temperature scarf in shades of blue, geeen, and yellow">
+
+    <div> &#x1f6a7 This site is under construction. Data, while accurate, is not returning consistently.</div>
+
+    <div class="container-fluid">
+      <div>
+        <form autocomplete="off" action="/action_page.php" id="get-data">
+          <div class="autocomplete" style="width:300px;">
+            <input id="myInput" type="text" name="myCity" placeholder="City Name">
+          </div>
+          <div style="width:100px;">
+            <input id="year" type="text" name="myYear" placeholder="Year">
+          </div>
+            <input type="submit">
+        </form>
       </div>
+    </div>
 
-      <h5 id="table-note">Please be patient. The data coming from NOAA will take a few moments.</h5>
+    <h5 id="table-note">Please be patient. The data coming from NOAA will take a few moments.</h5>
       
-      <table class="table w-50">
-        <thead>
-          <tr>
-              <th scope="col">Date</th>
-              <th scope="col">High Temperature (C)</th>
-          </tr>
-        </thead>
+    <table class="table w-50">
+      <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">High Temperature (C)</th>
+        </tr>
+      </thead>
 
-        <!-- Rows for Temperature Data -->
-        <tbody id="tbody"></tbody>
-      </table>
+      <!-- Rows for Temperature Data -->
+      <tbody id="tbody"></tbody>
+    </table>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
