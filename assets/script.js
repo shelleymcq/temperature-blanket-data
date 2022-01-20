@@ -965,6 +965,7 @@ form.addEventListener("submit", (e) => {
 
 const noaaToken = "oTpqrhNkWQBIbOWgrvJrCUeJdRKIhbac";
 
+// array of city:NOAA cityIDs
 const cityIDs = [
   { name: "Washington D.C., US", id: "CITY:US000001" },
   { name: "Alexander City, AL US", id: "CITY:US010001" },
@@ -1827,7 +1828,7 @@ function getCityID(city, year) {
 
 function getData(city, year) {
   console.log(city, year);
-  
+
   $.ajax({
     url:
       "https://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=TMAX&locationid=" +
