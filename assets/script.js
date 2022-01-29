@@ -1851,7 +1851,7 @@ function getData(city, year) {
         url:
           "https://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datacategoryid=TEMP&datatypeid=TMAX&stationid=" +
           station +
-          "&startdate=2020-01-01&enddate=2020-12-31&limit=1000&units=metric",
+          "&startdate=" + year + "-01-01&enddate=" + year + "-12-31&limit=1000&units=metric",
         headers: { token: noaaToken },
       })
         .then(function (response) {
