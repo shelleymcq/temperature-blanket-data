@@ -1,5 +1,6 @@
 // array of city and states in NOAA format
 const cities = [
+  "Mexico City, MX",
   "Washington D.C., US",
   "Alexander City, AL US",
   "Anniston, AL US",
@@ -967,6 +968,7 @@ const noaaToken = "oTpqrhNkWQBIbOWgrvJrCUeJdRKIhbac";
 
 // array of city:NOAA cityIDs
 const cityIDs = [
+  { "name": "Mexico City, MX", "id":"CITY:MX000020"},
   { name: "Washington D.C., US", id: "CITY:US000001" },
   { name: "Alexander City, AL US", id: "CITY:US010001" },
   { name: "Anniston, AL US", id: "CITY:US010002" },
